@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Procedimento;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 
 class ProcedimentoController extends Controller
 {
@@ -54,10 +55,19 @@ class ProcedimentoController extends Controller
 
     public function destroy(string $id)
     {
-        $procedimento = Procedimento::findOrFail($id);
-        $procedimento->delete();
+        try {
+            $procedimento = Procedimento::findOrFail($id);
+            $procedimento->delete();
 
-        return redirect()->route('procedimentos.index')
-                         ->with('success', 'Procedimento excluído com sucesso!');
+            return redirect()->route('procedimentos.index')
+                             ->with('success', 'Procedimento excluído com sucesso!');
+        } catch (QueryException $e) {
+            if ($e->getCode() === '23000') {
+                return redirect()->route('procedimentos.index')
+                                 ->with('error', 'Este procedimento não pode ser excluído, pois está sendo utilizado em orçamentos ou atendimentos.');
+            }
+            return redirect()->route('procedimentos.index')
+                             ->with('error', 'Ocorreu um erro ao tentar excluir o procedimento.');
+        }
     }
 }

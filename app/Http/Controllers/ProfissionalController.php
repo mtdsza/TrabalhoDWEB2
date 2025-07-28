@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Profissional;
+use Illuminate\Database\QueryException;
 
 class ProfissionalController extends Controller
 {
@@ -55,10 +56,19 @@ class ProfissionalController extends Controller
     }
     public function destroy(string $id)
     {
-        $profissional = Profissional::findOrFail($id);
-        $profissional->delete();
+        try {
+            $profissional = Profissional::findOrFail($id);
+            $profissional->delete();
 
-        return redirect()->route('profissionais.index')
-                         ->with('success', 'Profissional excluído com sucesso!');
+            return redirect()->route('profissionais.index')
+                             ->with('success', 'Profissional excluído com sucesso!');
+        } catch (QueryException $e) {
+            if ($e->getCode() === '23000') {
+                return redirect()->route('profissionais.index')
+                                 ->with('error', 'Este profissional não pode ser excluído, pois possui um histórico de consultas ou orçamentos no sistema.');
+            }
+            return redirect()->route('profissionais.index')
+                             ->with('error', 'Ocorreu um erro ao tentar excluir o profissional.');
+        }
     }
 }

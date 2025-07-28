@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Especialidade;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 
 class EspecialidadeController extends Controller
 {
@@ -39,8 +40,19 @@ class EspecialidadeController extends Controller
 
     public function destroy(string $id)
     {
-        $especialidade = Especialidade::findOrFail($id);
-        $especialidade->delete();
-        return redirect()->route('especialidades.index')->with('success', 'Especialidade excluída com sucesso!');
+        try {
+            $especialidade = Especialidade::findOrFail($id);
+            $especialidade->delete();
+
+            return redirect()->route('especialidades.index')
+                             ->with('success', 'Especialidade excluída com sucesso!');
+        } catch (QueryException $e) {
+            if ($e->getCode() === '23000') {
+                return redirect()->route('especialidades.index')
+                                 ->with('error', 'Esta especialidade não pode ser excluída, pois está vinculada a um ou mais profissionais.');
+            }
+            return redirect()->route('especialidades.index')
+                             ->with('error', 'Ocorreu um erro ao tentar excluir a especialidade.');
+        }
     }
 }

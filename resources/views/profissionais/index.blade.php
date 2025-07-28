@@ -12,6 +12,10 @@
         </div>
     @endif
 
+    @if (session('error'))
+        <div class="alert alert-danger">{{ session('error') }}</div>
+    @endif
+
     <table class="table table-striped table-hover">
         <thead class="table-dark">
             <tr>
