@@ -37,9 +37,6 @@
                     <a class="nav-link {{ Request::is('estoque*') ? 'active' : '' }}" href="{{ route('estoque.index') }}">Estoque</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link {{ Request::is('especialidades*') ? 'active' : '' }}" href="{{ route('especialidades.index') }}">Especialidades</a>
-                </li>
-                <li class="nav-item mb-2">
                     <a class="nav-link {{ Request::is('relatorio-financeiro') ? 'active' : '' }}" href="{{ route('relatorios.financeiro') }}">Relatório Financeiro</a>
                 </li>
                 @can('manage-users')
