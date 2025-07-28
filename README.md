@@ -53,7 +53,7 @@ php artisan key:generate
 **6. Configure o Banco de Dados**
 a. Usando uma ferramenta como o phpMyAdmin, MySQL Workbench ou DBeaver, crie um novo banco de dados vazio (ex: `odontosys`).
 
-b. Abra o arquivo `.env` que você acabou de criar e edite as seguintes linhas com os dados do seu banco de dados local:
+b. Abra o arquivo `.env` que você acabou de criar e edite as seguintes linhas com os dados do seu banco de dados local (certifique-se de que as linhas NÃO estão comentadas):
 ```ini
 DB_CONNECTION=mysql    # <--- Certifique-se de que está usando o MySQL
 DB_HOST=127.0.0.1
