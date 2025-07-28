@@ -7,7 +7,7 @@ Este é um sistema web desenvolvido como projeto para as disciplinas de Desenvol
 Para executar este projeto em sua máquina local, você precisará de um ambiente de desenvolvimento web. A maneira mais fácil é usar um pacote "tudo-em-um" como o **Laragon** (para Windows) ou o **XAMPP** (Windows, macOS, Linux).
 
 Certifique-se de que seu ambiente tenha:
-- PHP (versão 8.1 ou superior)
+- PHP (versão 8.2 ou superior)
 - MySQL ou MariaDB
 - Composer ([instruções de instalação](https://getcomposer.org/download/))
 - Node.js e NPM ([instruções de instalação](https://nodejs.org/))
