@@ -19,7 +19,7 @@ Siga este guia no seu terminal para configurar e executar o projeto.
 
 **1. Clone o Repositório**
 ```bash
-git clone [https://github.com/mtdsza/TrabalhoDWEB2.git](https://github.com/mtdsza/TrabalhoDWEB2.git)
+git clone https://github.com/mtdsza/TrabalhoDWEB2.git
 ```
 
 **2. Acesse a Pasta do Projeto**
@@ -35,6 +35,11 @@ composer install
 
 **4. Crie o Arquivo de Configuração de Ambiente**
 Copie o arquivo de exemplo `.env.example` para um novo arquivo chamado `.env`.
+*Se estiver usando o **CMD** do Windows:*
+```bash
+copy .env.example .env
+```
+*Se estiver usando **Linux, macOS ou Git Bash** no Windows:*
 ```bash
 cp .env.example .env
 ```
@@ -46,7 +51,7 @@ php artisan key:generate
 ```
 
 **6. Configure o Banco de Dados**
-a. Usando uma ferramenta como o phpMyAdmin, HeidiSQL ou DBeaver, crie um novo banco de dados vazio (ex: `odontosys`).
+a. Usando uma ferramenta como o phpMyAdmin, MySQL Workbench ou DBeaver, crie um novo banco de dados vazio (ex: `odontosys`).
 
 b. Abra o arquivo `.env` que você acabou de criar e edite as seguintes linhas com os dados do seu banco de dados local:
 ```ini
