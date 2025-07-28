@@ -55,7 +55,7 @@ a. Usando uma ferramenta como o phpMyAdmin, MySQL Workbench ou DBeaver, crie um 
 
 b. Abra o arquivo `.env` que você acabou de criar e edite as seguintes linhas com os dados do seu banco de dados local:
 ```ini
-DB_CONNECTION=mysql
+DB_CONNECTION=mysql    # <--- Certifique-se de que está usando o MySQL
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=odontosys  # <--- Coloque o nome do banco que você criou
