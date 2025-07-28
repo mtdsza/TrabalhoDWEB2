@@ -93,6 +93,6 @@ Para o primeiro acesso, utilize as credenciais de administrador criadas no passo
 Após o login, o administrador pode criar novas contas de usuário (Secretaria, Profissional) através da seção "Usuários" na barra lateral.
 
 ## Tecnologias Utilizadas
-- **Backend:** Laravel 11, PHP 8.2
+- **Backend:** Laravel 12, PHP 8.2
 - **Frontend:** Blade, Bootstrap 5, JavaScript
 - **Banco de Dados:** MySQL / MariaDB
