@@ -81,7 +81,7 @@ npm run build
 php artisan serve
 ```
 
-O sistema estará rodando! Acesse a URL: **[http://127.0.0.1:8000](http://127.0.0.1:8000)**
+O sistema estará rodando! Acesse a URL: **[http://127.0.0.1:8000/login](http://127.0.0.1:8000/login)**
 
 ## Acesso ao Sistema
 
