@@ -94,5 +94,5 @@ Após o login, o administrador pode criar novas contas de usuário (Secretaria, 
 
 ## Tecnologias Utilizadas
 - **Backend:** Laravel 12, PHP 8.2
-- **Frontend:** Blade, Bootstrap 5, JavaScript
+- **Frontend:** Blade, Bootstrap 5, JavaScript, IMask.js
 - **Banco de Dados:** MySQL / MariaDB
